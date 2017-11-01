@@ -1,0 +1,65 @@
+
+<div>
+	<table>
+		<tr>
+			<td width="120px"><mat-progress-spinner
+					[color]="color"
+					[mode]="mode"
+					[value]="value"> </mat-progress-spinner></td>
+			<td><h5>
+					<span>Account</span> {{amount}} {{currency}}
+				</h5></td>
+			<td align="right">
+				<button mat-icon-button>
+					<mat-icon
+						aria-label="Print account deals"
+						(click)="print()">print</mat-icon>
+				</button>
+			</td>
+		</tr>
+	</table>
+</div>
+<div class="example-container mat-elevation-z8">
+	<mat-table
+		#table
+		[dataSource]="dataSource" id ="mainTable"
+		matSort> - Note that these columns can be defined in any
+	order. The actual rendered columns are set as a property on the row
+	definition" Date Column <ng-container matColumnDef="date">
+	<mat-header-cell *matHeaderCellDef> DATE </mat-header-cell> <mat-cell
+		*matCellDef="let row"> {{row.date}} </mat-cell> </ng-container> Description Column <ng-container
+		matColumnDef="description"> <mat-header-cell
+		*matHeaderCellDef> DESCRIPTION </mat-header-cell> <mat-cell
+		*matCellDef="let row"> {{row.description}} </mat-cell> </ng-container> Amount Column
+	<ng-container matColumnDef="amount"> <mat-header-cell
+		*matHeaderCellDef> AMOUNT </mat-header-cell> <mat-cell
+		*matCellDef="let row "
+		[style.color]="'blue'"> <ng-template
+		[ngIf]="row.description == 'Deposit'">+</ng-template> <ng-template
+		[ngIf]="row.description == 'Withdrawal'">-</ng-template>
+	{{row.amount}} </mat-cell> </ng-container> Color Column <mat-header-row
+		*matHeaderRowDef="displayedColumns"></mat-header-row> <mat-row
+		*matRowDef="let row; columns: displayedColumns;"></mat-row> </mat-table>
+	<mat-paginator
+		#paginator
+		[length]="exampleDatabase.length"
+		[pageIndex]="0"
+		[pageSize]="5"
+		[pageSizeOptions]="[5, 10, 25, 100]"> </mat-paginator>
+</div>
+<div
+	[hidden]=true
+	id="print-section">
+	<table class="table">
+		<tr>
+			<td>DATE</td>
+			<td>DESCRIPTION</td>
+			<td>AMOUNT</td>
+		</tr>
+		<tr *ngFor="let claimReports of exampleDatabase">
+			<td>{{claimReports.date}}</td>
+			<td>{{claimReports.description}}</td>
+			<td>{{claimReports.amount}}</td>
+		</tr>
+	</table>
+</div>

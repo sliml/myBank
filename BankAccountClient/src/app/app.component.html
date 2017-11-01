@@ -1,0 +1,83 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta
+	http-equiv="Content-Type"
+	content="text/html; charset=utf-8">
+<title>Fixed Width 2 Blue</title>
+</head>
+<body>
+	<div id="page">
+		<header id="header">
+			<div id="header-inner">
+				<div id="logo">
+					<h1>
+						<a href="#">MY<span>BANK</span></a>
+					</h1>
+				</div>
+				<div id="top-nav">
+					<ul>
+						<li><a href="#">About</a></li>
+						<li><a href="#">Contact</a></li>
+						<li><a href="#">FAQ</a></li>
+						<li><a href="#">Help</a></li>
+					</ul>
+				</div>
+				<div class="clr"></div>
+			</div>
+		</header>
+		<div class="feature">
+			<div class="feature-inner">
+				<h5>Hi Mr LASSOUED</h5>
+			</div>
+		</div>
+		<div id="content">
+			<div id="content-inner">
+				<main id="contentbar">
+				<div class="article">
+					<router-outlet></router-outlet>
+				</div>
+				</main>
+				<nav id="sidebar">
+					<div class="widget">
+						<h3>Account</h3>
+						<!-- <mat-toolbar class="md-medium-tall" color="secondary">
+							<mat-toolbar-row> <a class="nav-link"
+								routerLink="/">Account</a> <span class="example-spacer"></span>
+							<mat-icon>home</mat-icon> </mat-toolbar-row> <mat-toolbar-row> <a
+								class="nav-link" routerLink="/forms">Deposit / Withdrawal</a> <span
+								class="example-spacer"></span> <mat-icon class="example-icon">verified_user</mat-icon>
+							</mat-toolbar-row> </mat-toolbar> -->
+						<ul>
+							<li><mat-icon>home</mat-icon><a
+								class="nav-link"
+								routerLink="/">Account</a> <span class="example-spacer"></span>
+								</li>
+							<li><mat-icon class="example-icon">verified_user</mat-icon><a
+								class="nav-link"
+								routerLink="/forms">Deposit / Withdrawal</a> <span
+								class="example-spacer"></span> </li>
+						</ul>
+					</div>
+				</nav>
+				<div class="clr"></div>
+			</div>
+		</div>
+		<div id="footerblurb">
+			<div id="footerblurb-inner">
+				<div class="clr"></div>
+			</div>
+		</div>
+		<footer id="footer">
+			<div id="footer-inner">
+				<p>
+					&copy; Copyright <a href="#">Your Site</a> &#124; <a href="#">Terms
+						of Use</a> &#124; <a href="#">Privacy Policy</a>
+				</p>
+				<div class="clr"></div>
+			</div>
+		</footer>
+	</div>
+</body>
+</html>

@@ -1,0 +1,42 @@
+
+<div class='row'>
+	<h5>Deposit / Withdrawal</h5>
+	<div>
+		<table
+			class="example-full-width"
+			style="width: 445px; top: 100px; margin-top: 55px;"
+			id="table">
+			<tr>
+				<td><mat-form-field class="mdl-textfield__input">
+					<input
+						#textbox
+						matInput
+						id="amount"
+						[value]="amount"
+						pattern="[0-9]*"
+						placeholder="Amount"
+						maxlength="6"
+						required="required"
+						min="0.00"
+						max="999999.99"
+						step="0.01"
+						type="number"> </mat-form-field></td>
+			</tr>
+			<tr>
+				<td>
+					<button
+						mat-raised-button
+						color="primary"
+						(click)="deposit(textbox)">Deposit</button>
+					<button
+						mat-raised-button
+						color="warn"
+						(click)="withdrawal(textbox)">Withdrawal</button>
+				</td>
+			</tr>
+			<tr>
+				<p-messages [(value)]="msgs"></p-messages>
+			</tr>
+		</table>
+	</div>
+</div>
